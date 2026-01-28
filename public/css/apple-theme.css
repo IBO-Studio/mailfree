@@ -1,0 +1,470 @@
+/* =============================================
+   FreeMail - Apple Theme Override v3.0
+   基于 Apple Human Interface Guidelines
+   优先级高于 app.css
+   ============================================= */
+
+/* ===== 导入设计系统变量 ===== */
+@import url('./base/variables.css');
+
+/* ===== 覆盖 Body 背景 ===== */
+body {
+  background: var(--surface-secondary) !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--text-base) !important;
+  line-height: 1.47059 !important;
+  letter-spacing: -0.022em !important;
+}
+
+/* 移除所有背景动画 */
+body::before,
+body::after {
+  display: none !important;
+}
+
+/* ===== 导航栏 (Apple 毛玻璃) ===== */
+.topbar {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: saturate(180%) blur(20px) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5) inset !important;
+  max-width: 1280px !important;
+  padding: 12px 22px !important;
+}
+
+/* 移除导航栏渐变条 */
+.topbar::before {
+  display: none !important;
+}
+
+/* 品牌 - 移除渐变动画 */
+.brand {
+  font-size: var(--text-xl) !important;
+  font-weight: 600 !important;
+}
+
+.brand:hover {
+  transform: none !important;
+  opacity: 0.8 !important;
+}
+
+.brand span,
+.brand-text {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: var(--text) !important;
+  background-clip: unset !important;
+  color: var(--text) !important;
+  animation: none !important;
+}
+
+/* 品牌图标 - 移除动画 */
+.brand-icon {
+  animation: none !important;
+  filter: none !important;
+}
+
+/* 角色徽章 - Apple 纯色风格 */
+.role-badge {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  padding: 4px 10px !important;
+}
+
+.role-badge:hover {
+  transform: none !important;
+}
+
+.role-user {
+  background: var(--gray-200) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  color: var(--text-light) !important;
+}
+
+.role-admin {
+  background: var(--green-light) !important;
+  border: 1px solid var(--green) !important;
+  box-shadow: none !important;
+  color: var(--green) !important;
+}
+
+.role-super {
+  background: var(--blue) !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  color: #FFFFFF !important;
+}
+
+/* ===== 按钮系统 (Apple 纯色) ===== */
+.btn {
+  background: var(--blue) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  padding: 10px 20px !important;
+  font-size: var(--text-base) !important;
+  font-weight: 500 !important;
+  transition: var(--transition) !important;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+.btn::before,
+.btn::after {
+  display: none !important;
+}
+
+.btn:hover {
+  background: var(--blue-hover) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn:active {
+  background: var(--blue-active) !important;
+  transform: scale(0.98) !important;
+}
+
+/* 次要按钮 */
+.btn-secondary,
+.btn-ghost {
+  background: var(--blue-light) !important;
+  color: var(--blue) !important;
+  border: none !important;
+}
+
+.btn-secondary:hover,
+.btn-ghost:hover {
+  background: rgba(0, 122, 255, 0.15) !important;
+  color: var(--blue) !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* 危险按钮 */
+.btn-danger {
+  background: var(--red) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+}
+
+.btn-danger:hover {
+  background: var(--red-hover) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* 主按钮 */
+.btn-primary {
+  background: var(--blue) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background: var(--blue-hover) !important;
+}
+
+/* 生成按钮 */
+.btn-generate {
+  background: #FFFFFF !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.btn-generate:hover {
+  background: var(--gray-50) !important;
+  border-color: var(--border-medium) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transform: none !important;
+}
+
+/* 按钮图标 - 移除动画 */
+.btn-icon {
+  transition: none !important;
+}
+
+.btn:hover .btn-icon {
+  transform: none !important;
+}
+
+/* ===== 卡片系统 (Apple 纯色) ===== */
+.card {
+  background: var(--card) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: var(--radius-xl) !important; /* 20px */
+  box-shadow: var(--shadow-sm) !important;
+  border: 1px solid var(--border) !important;
+  padding: 32px !important;
+}
+
+/* 移除卡片渐变条和伪元素 */
+.card::before,
+.card::after {
+  display: none !important;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-2px) !important;
+  border-color: var(--border-medium) !important;
+}
+
+/* 生成卡片 */
+.generate-card {
+  background: var(--card) !important;
+}
+
+/* 收件箱卡片 */
+.inbox-card {
+  background: var(--card) !important;
+}
+
+/* ===== 侧边栏 (Apple 风格) ===== */
+.sidebar {
+  background: var(--card) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: var(--radius-xl) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* 移除侧边栏渐变条 */
+.sidebar::before {
+  display: none !important;
+}
+
+.sidebar:hover {
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ===== 邮箱项 (移除复杂效果) ===== */
+.mailbox-item {
+  background: var(--card) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  cursor: pointer;
+}
+
+.mailbox-item::before,
+.mailbox-item::after {
+  display: none !important;
+}
+
+.mailbox-item:hover {
+  background: var(--gray-50) !important;
+  border-color: var(--border-medium) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.mailbox-item.selected {
+  background: var(--blue-light) !important;
+  border: 2px solid var(--blue) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.mailbox-item.selected::before {
+  display: none !important;
+}
+
+/* 置顶邮箱 */
+.mailbox-item.pinned {
+  background: var(--yellow-light) !important;
+  border: 1px solid var(--yellow) !important;
+  box-shadow: none !important;
+}
+
+.mailbox-item.pinned:hover {
+  background: rgba(255, 204, 0, 0.15) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* ===== 邮箱显示区域 ===== */
+.email-display {
+  background: #FFFFFF !important;
+  border: 2px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.email-display::before {
+  display: none !important;
+}
+
+.email-display.has-email {
+  border-color: var(--blue) !important;
+  background: var(--blue-light) !important;
+  color: var(--blue) !important;
+  animation: none !important;
+  box-shadow: none !important;
+}
+
+.email-display.has-email::before {
+  display: none !important;
+}
+
+/* ===== 状态徽章 ===== */
+.status-badge {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.status-badge::before {
+  display: none !important;
+}
+
+/* ===== 移除所有图标动画 ===== */
+.card-icon,
+.sidebar-icon,
+.section-icon,
+.label-icon {
+  animation: none !important;
+  filter: none !important;
+}
+
+/* ===== 侧边栏切换按钮 ===== */
+.sidebar-toggle-btn {
+  background: #FFFFFF !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: var(--shadow-xs) !important;
+}
+
+.sidebar-toggle-btn::before {
+  display: none !important;
+}
+
+.sidebar-toggle-btn:hover {
+  background: var(--gray-50) !important;
+  border-color: var(--border-medium) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transform: none !important;
+}
+
+/* ===== 输入框 (Apple 风格) ===== */
+.input,
+.select,
+.textarea {
+  background: #FFFFFF !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: var(--text-base) !important;
+  padding: 10px 12px !important;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none !important;
+  border-color: var(--blue) !important;
+  box-shadow: 0 0 0 3px var(--blue-light) !important;
+  transform: none !important;
+}
+
+/* ===== 配置表单 ===== */
+.config-form {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* ===== 容器 ===== */
+.container {
+  max-width: 1280px !important;
+  padding: 20px 22px !important;
+}
+
+/* ===== 模态框 ===== */
+.modal-card {
+  background: var(--card) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: var(--radius-xl) !important;
+  box-shadow: var(--shadow-lg) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.modal-card::before,
+.modal-card::after {
+  display: none !important;
+}
+
+/* ===== 加载指示器 ===== */
+.spinner {
+  border-color: var(--blue-light) !important;
+  border-top-color: var(--blue) !important;
+}
+
+/* ===== 暗色模式适配 ===== */
+@media (prefers-color-scheme: dark) {
+  .topbar {
+    background: rgba(28, 28, 30, 0.72) !important;
+    border-bottom-color: var(--border) !important;
+  }
+  
+  .btn-generate {
+    background: var(--card) !important;
+    border-color: var(--border) !important;
+  }
+  
+  .btn-generate:hover {
+    background: var(--surface-tertiary) !important;
+  }
+  
+  .input,
+  .select,
+  .textarea {
+    background: var(--card) !important;
+  }
+}
+
+/* ===== 响应式优化 ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px !important;
+  }
+  
+  .topbar {
+    padding: 10px 16px !important;
+  }
+  
+  .card {
+    padding: 20px !important;
+  }
+}
+
+/* ===== 添加 cursor pointer ===== */
+.btn,
+.card,
+.mailbox-item,
+.sidebar-toggle-btn,
+.brand,
+.nav-actions > *,
+button {
+  cursor: pointer !important;
+}
+
+/* ===== 移除过度动画 ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

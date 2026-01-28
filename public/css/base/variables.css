@@ -1,120 +1,151 @@
 /* =============================================
-   CSS 变量模块 - 设计系统基础
+   Apple Design System - 设计系统基础
+   基于 Apple Human Interface Guidelines
    ============================================= */
 
 :root {
-  /* ===== 增强背景系统 ===== */
-  --surface: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 25%, #f8fafc 50%, #fff1f2 75%, #fef3e8 100%);
-  --surface-overlay: linear-gradient(135deg, rgba(248, 250, 252, 0.85) 0%, rgba(241, 245, 249, 0.92) 100%);
-  --surface-pattern: radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
-  --surface-mesh: 
-    radial-gradient(at 40% 20%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, rgba(236, 72, 153, 0.06) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.06) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, rgba(245, 158, 11, 0.05) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.08) 0px, transparent 50%);
+  /* ===== Apple 灰色系统 (核心) ===== */
+  --gray-50: #FAFAFA;
+  --gray-100: #F5F5F7;   /* Apple 官网背景 */
+  --gray-200: #E8E8ED;
+  --gray-300: #D2D2D7;
+  --gray-400: #86868B;   /* 次要文本 */
+  --gray-500: #6E6E73;
+  --gray-600: #515154;
+  --gray-900: #1D1D1F;   /* 主文本 */
   
-  /* ===== 增强卡片系统 ===== */
-  --card: rgba(255, 255, 255, 0.88);
-  --card-hover: rgba(255, 255, 255, 0.96);
-  --card-glass: rgba(255, 255, 255, 0.65);
-  --card-glass-hover: rgba(255, 255, 255, 0.85);
-  --card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.95) 100%);
-  --card-gradient-accent: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(236, 72, 153, 0.02) 100%);
+  /* ===== 背景系统 (纯色) ===== */
+  --surface: #FFFFFF;
+  --surface-secondary: #F5F5F7;
+  --surface-tertiary: #FAFAFA;
   
-  /* ===== 主色系 ===== */
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --primary-active: #4338ca;
-  --primary-light: rgba(99, 102, 241, 0.12);
-  --primary-glass: rgba(99, 102, 241, 0.06);
-  --primary-rgb: 99, 102, 241;
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
-  --primary-gradient-soft: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
+  /* ===== 卡片系统 (纯色) ===== */
+  --card: #FFFFFF;
+  --card-hover: #FFFFFF;
+  --card-secondary: #F5F5F7;
   
-  /* ===== 次要色系 ===== */
-  --secondary: #8b5cf6;
-  --secondary-hover: #7c3aed;
-  --secondary-light: rgba(139, 92, 246, 0.12);
-  --secondary-gradient: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+  /* ===== Apple 系统色 ===== */
+  --blue: #007AFF;       /* Apple 蓝 - 主色 */
+  --blue-hover: #0051D5;
+  --blue-active: #004FC1;
+  --blue-light: rgba(0, 122, 255, 0.08);
   
-  /* ===== 强调色系 ===== */
-  --accent: #ec4899;
-  --accent-hover: #db2777;
-  --accent-light: rgba(236, 72, 153, 0.12);
-  --accent-gradient: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+  /* ===== 系统状态色 ===== */
+  --green: #34C759;      /* Success */
+  --green-hover: #30B350;
+  --green-light: rgba(52, 199, 89, 0.08);
   
-  /* ===== 状态颜色 ===== */
-  --success: #10b981;
-  --success-hover: #059669;
-  --success-light: rgba(16, 185, 129, 0.12);
-  --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  --red: #FF3B30;        /* Danger */
+  --red-hover: #E6342A;
+  --red-active: #CC2E24;
+  --red-light: rgba(255, 59, 48, 0.08);
   
-  --warning: #f59e0b;
-  --warning-hover: #d97706;
-  --warning-light: rgba(245, 158, 11, 0.12);
-  --warning-gradient: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  --orange: #FF9500;     /* Warning */
+  --orange-hover: #E68600;
+  --orange-light: rgba(255, 149, 0, 0.08);
   
-  --danger: #ef4444;
-  --danger-hover: #dc2626;
-  --danger-active: #b91c1c;
-  --danger-light: rgba(239, 68, 68, 0.12);
-  --danger-gradient: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+  --yellow: #FFCC00;     /* Info */
+  --yellow-hover: #E6B800;
+  --yellow-light: rgba(255, 204, 0, 0.08);
   
-  --info: #0ea5e9;
-  --info-hover: #0284c7;
-  --info-light: rgba(14, 165, 233, 0.12);
-  --info-gradient: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+  /* ===== 便捷别名 (兼容旧代码) ===== */
+  --primary: var(--blue);
+  --primary-hover: var(--blue-hover);
+  --primary-active: var(--blue-active);
+  --primary-light: var(--blue-light);
+  
+  --success: var(--green);
+  --success-hover: var(--green-hover);
+  --success-light: var(--green-light);
+  
+  --danger: var(--red);
+  --danger-hover: var(--red-hover);
+  --danger-active: var(--red-active);
+  --danger-light: var(--red-light);
+  
+  --warning: var(--orange);
+  --warning-hover: var(--orange-hover);
+  --warning-light: var(--orange-light);
   
   /* ===== 文字颜色 ===== */
-  --text: #0f172a;
-  --text-light: #334155;
-  --text-muted: #64748b;
-  --text-secondary: #94a3b8;
-  --text-disabled: #cbd5e1;
-  --text-inverse: #ffffff;
+  --text: var(--gray-900);
+  --text-light: var(--gray-600);
+  --text-muted: var(--gray-400);
+  --text-secondary: var(--gray-500);
+  --text-disabled: var(--gray-300);
+  --text-inverse: #FFFFFF;
   
-  /* ===== 边框系统 ===== */
-  --border: #e2e8f0;
-  --border-light: #f1f5f9;
-  --border-focus: #6366f1;
-  --border-glass: rgba(255, 255, 255, 0.3);
-  --border-glass-hover: rgba(255, 255, 255, 0.5);
+  /* ===== 边框系统 (极淡) ===== */
+  --border: rgba(0, 0, 0, 0.06);
+  --border-light: rgba(0, 0, 0, 0.04);
+  --border-medium: rgba(0, 0, 0, 0.1);
+  --border-focus: var(--blue);
   
-  /* ===== 阴影系统 ===== */
+  /* ===== 阴影系统 (极简) ===== */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
-  --shadow-glow: 0 0 24px rgba(99, 102, 241, 0.2);
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
-  --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
   
-  /* ===== 间距系统 ===== */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 48px;
+  /* ===== 间距系统 (8px grid) ===== */
+  --space-1: 4px;
+  --space-2: 8px;    /* 基础单位 */
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
   
-  /* ===== 圆角系统 ===== */
-  --radius-sm: 6px;
-  --radius-md: 10px;
+  /* ===== 兼容别名 ===== */
+  --spacing-xs: var(--space-1);
+  --spacing-sm: var(--space-2);
+  --spacing-md: var(--space-4);
+  --spacing-lg: var(--space-6);
+  --spacing-xl: var(--space-8);
+  --spacing-2xl: var(--space-12);
+  
+  /* ===== 圆角系统 (Apple 标准) ===== */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
   --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
   --radius-full: 9999px;
   
-  /* ===== 动画系统 ===== */
-  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* ===== 动画系统 (统一 200ms) ===== */
+  --duration: 200ms;
+  --duration-fast: 150ms;
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);  /* ease */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* ease-out-expo */
   
-  /* ===== 字体系统 ===== */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  /* ===== 兼容别名 ===== */
+  --transition: all var(--duration) var(--ease);
+  --transition-fast: all var(--duration-fast) var(--ease);
+  
+  /* ===== 字体系统 (SF Pro) ===== */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  
+  /* 字号系统 */
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 15px;   /* Apple 标准正文 */
+  --text-lg: 17px;
+  --text-xl: 21px;
+  --text-2xl: 28px;
+  --text-3xl: 40px;
+  --text-4xl: 56px;
+  
+  /* 字重系统 */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
   
   /* ===== 层级系统 ===== */
   --z-dropdown: 100;
@@ -122,19 +153,64 @@
   --z-modal: 1000;
   --z-toast: 2000;
   --z-tooltip: 3000;
+  
+  /* ===== 毛玻璃效果 (仅导航栏使用) ===== */
+  --backdrop-blur: saturate(180%) blur(20px);
 }
 
-/* ===== 暗色模式变量 ===== */
+/* ===== Apple 暗色模式 ===== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --surface: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-    --card: rgba(30, 41, 59, 0.9);
-    --card-hover: rgba(30, 41, 59, 0.95);
-    --card-glass: rgba(30, 41, 59, 0.7);
-    --text: #f8fafc;
-    --text-light: #e2e8f0;
-    --text-muted: #94a3b8;
-    --border: #334155;
-    --border-light: #1e293b;
+    /* 背景系统 */
+    --surface: #000000;
+    --surface-secondary: #1C1C1E;
+    --surface-tertiary: #2C2C2E;
+    
+    /* 卡片系统 */
+    --card: #1C1C1E;
+    --card-hover: #1C1C1E;
+    --card-secondary: #2C2C2E;
+    
+    /* 文字颜色 */
+    --text: #F5F5F7;
+    --text-light: #AEAEB2;
+    --text-muted: #8E8E93;
+    --text-secondary: #636366;
+    --text-disabled: #48484A;
+    
+    /* 边框系统 */
+    --border: rgba(255, 255, 255, 0.1);
+    --border-light: rgba(255, 255, 255, 0.06);
+    --border-medium: rgba(255, 255, 255, 0.15);
+    
+    /* 阴影系统 */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.6);
+    
+    /* 系统色保持不变 - Apple 标准 */
+    --blue: #0A84FF;
+    --blue-hover: #409CFF;
+    --green: #32D74B;
+    --red: #FF453A;
+    --orange: #FF9F0A;
+    --yellow: #FFD60A;
+  }
+}
+
+/* ===== 减少动画偏好设置 ===== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration: 0ms;
+    --duration-fast: 0ms;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

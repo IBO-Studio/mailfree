@@ -1,0 +1,80 @@
+/* =============================================
+   SVG Icons - Lucide Icons Style
+   替换 Emoji 使用的 SVG 图标
+   ============================================= */
+
+/* 图标基础样式 */
+.icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-lg {
+  width: 24px;
+  height: 24px;
+}
+
+/* 图标定义 */
+.icon-mail {
+  /* 邮件图标 */
+}
+
+.icon-send {
+  /* 发送图标 */
+}
+
+.icon-trash {
+  /* 垃圾桶图标 */
+}
+
+.icon-refresh {
+  /* 刷新图标 */
+}
+
+.icon-copy {
+  /* 复制图标 */
+}
+
+.icon-link {
+  /* 链接图标 */
+}
+
+.icon-settings {
+  /* 设置图标 */
+}
+
+.icon-logout {
+  /* 登出图标 */
+}
+
+.icon-inbox {
+  /* 收件箱图标 */
+}
+
+.icon-star {
+  /* 星标图标 */
+}
+
+.icon-star-filled {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* 品牌图标特殊处理 */
+.brand-icon .icon {
+  width: 24px;
+  height: 24px;
+}
