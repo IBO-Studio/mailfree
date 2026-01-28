@@ -11,7 +11,13 @@ database_id = "aa900401-fab5-4904-8a40-16f2a9727827" # 你的database_id
 # 登录会话过期时间（单位：天，默认7天）
 # 环境变量
 [vars]
-# FORWARD_RULES="[{"prefix":"vip","email":"a@example.com"},{"prefix":"*","email":"2141083706@qq.com"}]"
+ADMIN_NAME="iding"
+ADMIN_PASSWORD="asdfgh"
+GUEST_PASSWORD="adminasdawawdwa"
+JWT_TOKEN="fjiwaiv23164s4f6df6wfdx"
+# 登录会话过期时间（单位：天，默认7天）
+SESSION_EXPIRE_DAYS="7"
+# FORWARD_RULES="[{\"prefix\":\"vip\",\"email\":\"a@example.com\"},{\"prefix\":\"*\",\"email\":\"2141083706@qq.com\"}]"
 
 
 # 静态资源目录（Workers + Assets）
