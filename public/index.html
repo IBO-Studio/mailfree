@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="/css/apple-theme.css" />
     <link rel="stylesheet" href="/css/icons.css" />
     <link rel="stylesheet" href="/css/app-mobile.css" media="(max-width: 900px)" />
-    <script src="/js/icon-replacer.js"></script>
     <script src="/js/toast-utils.js"></script>
     <script src="/js/mock.js"></script>
     <!-- 提前内联保存 hash，保证最早阶段即可保留路由信息 -->
@@ -214,6 +213,8 @@
         }
       })();
     </script>
+    <!-- 图标替换器 - 最后加载,避免阻塞业务逻辑 -->
+    <script src="/js/icon-replacer.js" defer></script>
   </body>
   </html>
 
